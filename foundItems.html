@@ -1,8 +1,14 @@
 <div class="row" ng-repeat="item in dirCtrl.found">
 	<div class="col-xs-6 col-sm-3">
-		<button class="btn btn-primary" ng-click="dirCtrl.onRemove({index: $index});">Don't want this one!</button>
+		<button class="btn btn-primary" 
+		ng-click="dirCtrl.onRemove({index: $index});">Don't want this one!</button>
 	</div>
 	<div class="col-xs-6 col-sm-1">{{item.short_name}}</div>
   	<div class="col-xs-6 col-sm-2">{{item.name}}</div>
   	<div class="col-xs-6 col-sm-6">{{item.description}}</div>
+</div>
+<div class="row error"
+	style="color: red; font-weight: bold"
+	ng-if="dirCtrl.menuExists() && !dirCtrl.itemsInMenu()">
+	<div class="col-xs-6 col-sm-3">Nothing found</div>
 </div>

@@ -6,8 +6,12 @@
 	.controller('NarrowItDownDirectiveController', [function() {
 		var dirCtrl = this;
 
+			dirCtrl.menuExists = function() {
+				return (dirCtrl.found ? true : false);
+			}
+
 			dirCtrl.itemsInMenu = function() {
-				return dirCtrl.found.length > 0;
+				return dirCtrl.menuExists() && dirCtrl.found.length > 0;
 			}
 	}])
 	.directive('foundItems', function() {
@@ -51,7 +55,7 @@
 	.controller('NarrowItDownController', ['$scope', 'MenuSearchService', function($scope, $service) {
 		var ctrl = this;
 		
-		ctrl.searchTerm = '';
+		ctrl.searchTerm = 'ttter';
 
 		ctrl.narrowBtnClick = function() {
 			$service.getMatchedMenuItems(ctrl.searchTerm)
