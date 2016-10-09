@@ -55,7 +55,7 @@
 	.controller('NarrowItDownController', ['$scope', 'MenuSearchService', function($scope, $service) {
 		var ctrl = this;
 		
-		ctrl.searchTerm = 'ttter';
+		ctrl.searchTerm = '';
 
 		ctrl.narrowBtnClick = function() {
 			$service.getMatchedMenuItems(ctrl.searchTerm)
