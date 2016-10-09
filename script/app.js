@@ -37,6 +37,10 @@
 				var data = response.data;
 			    var foundItems = [];
 
+			    if(!searchTerm) {
+			    	return [];
+			    }
+
 			    for(var i in data.menu_items) {
 			    	var menuItem = data.menu_items[i];
 			    	if(menuItem.description.toLowerCase().indexOf(searchTerm) >= 0 
